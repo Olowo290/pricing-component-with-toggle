@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif;
+}
+header {
+  text-align: center;
+  margin-top: 2em;
+}
+header article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+h1 {
+  font-size: 2.5rem;
+  color: hsl(233, 13%, 49%);
+}
+header span {
+  color: hsl(234, 14%, 74%);
+  font-size: 1.6rem;
+}
+
+input {
+  display: none; /*hide the checkbox*/
+}
+label {
+  width: 50px;
+  aspect-ratio: 2;
+  background-color: hsl(237, 63%, 64%);
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.ball {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: hsl(240, 78%, 98%);
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  transition: all 0.2s ease;
+}
+label.checked .ball {
+  left: 28px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 70vh;
+}
+article {
+  padding: 1em;
+}
+section article {
+  width: 250px;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.price,
+h3 {
+  text-align: center;
+}
+h3 {
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  margin-bottom: 1.3em;
+  margin-top: 1.2em;
+}
+
+/* doesnt involve the cards beside */
+
+section article:nth-child(2) {
+  background-image: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: hsl(240, 78%, 98%);
+  padding: 2em;
+  border-radius: 10px;
+}
+section article:nth-child(2) button {
+  background-color: hsl(240, 78%, 98%);
+  margin-bottom: 1.3em;
+  color: hsl(237, 63%, 64%);
+}
+/* end */
+
+/* doesent involve the middle one */
+section article:not(:nth-child(2)) {
+  background-color: hsl(240, 78%, 98%);
+  color: hsl(233, 13%, 49%);
+  box-shadow: 1px 1px 7px 1px hsla(237, 63%, 64%, 0.2);
+}
+section article:not(:nth-child(2)) .price {
+  color: hsl(232, 13%, 33%);
+  font-weight: bold;
+}
+
+section article:not(:nth-child(2)) button {
+  background-image: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  margin-bottom: 1em;
+  color: hsl(240, 78%, 98%);
+}
+/* Above end */
+
+.ann.hide {
+  display: none;
+}
+button {
+  width: 100%;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 0.7em;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+/* list items */
+li {
+  list-style: none;
+  border-top: 1px solid hsl(234, 14%, 74%);
+  padding: 1em;
+  font-size: 1.4rem;
+  text-align: center;
+}
+li:first-child {
+  margin-top: 1em;
+}
+li:last-child {
+  border-bottom: 1px solid hsl(234, 14%, 74%);
+  margin-bottom: 1em;
+}
+/* li ends */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+/*border-radius*/
+section article:first-child {
+  border-radius: 10px 0 0 10px;
+}
+section article:nth-child(3) {
+  border-radius: 0 10px 10px 0;
+}
+@media screen and (700px > width > 400px) {
+  section {
+    padding: 1em;
+    gap: 2em;
+  }
+  section article {
+    width: 100%;
+  }
+}
+
+@media screen and (width < 400px) {
+  section {
+    flex-direction: column;
+    padding: 1em;
+    gap: 2.5em;
+  }
+  section article {
+    width: 95%;
+  }
+}
